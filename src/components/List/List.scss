@@ -1,0 +1,61 @@
+.list {
+  &__title {
+    text-transform: uppercase;
+
+    &--income {
+      color: aquamarine;
+    }
+
+    &--expenses {
+      color: firebrick;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px grey solid;
+    padding-inline: 1rem;
+    position: relative;
+
+    &__number {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transform: translateX(0px);
+      transition: transform ease-in-out 300ms;
+
+      &--income {
+        color: aquamarine;
+      }
+      &--expenses {
+        color: firebrick;
+      }
+    }
+    &__icon {
+      cursor: pointer;
+      display: flex;
+      visibility: hidden;
+      transition: visibility ease-in-out 100ms;
+      position: absolute;
+      right: 0;
+      &--income {
+        color: aquamarine;
+      }
+      &--expenses {
+        color: firebrick;
+      }
+    }
+  }
+}
+
+.list__item:hover {
+  .list__item__number {
+    transform: translateX(-15px);
+  }
+  .list__item__icon {
+    visibility: visible;
+    transition: visibility ease-in-out 400ms 100ms;
+  }
+}

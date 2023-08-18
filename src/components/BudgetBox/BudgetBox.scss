@@ -1,0 +1,16 @@
+.budget-box {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1rem;
+  margin-bottom: 1rem;
+
+  &--income {
+    background-color: aquamarine;
+    color: black;
+  }
+
+  &--expense {
+    background-color: firebrick;
+  }
+}
