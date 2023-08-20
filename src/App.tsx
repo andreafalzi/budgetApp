@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import './App.scss';
 import BudgetBox from './components/BudgetBox/BudgetBox';
 import List from './components/List/List';
 import { ListArrayProps } from './types';
+import { blockInvalidChar } from './utils';
+import { BsCheck2Circle } from 'react-icons/bs';
+import './App.scss';
 
 function App() {
   const now = new Date();
@@ -124,12 +126,13 @@ function App() {
           type='number'
           name='money'
           placeholder='Value'
+          onKeyDown={blockInvalidChar}
           id='money'
           value={money}
           onChange={(e) => setMoney(e.target.value)}
         />
         <button className='budget-input__button' type='button' onClick={handleSubmit}>
-          ✔️
+          <BsCheck2Circle size={20} color='black' />
         </button>
       </div>
       <div className='bottom'>

@@ -9,7 +9,9 @@ const BudgetBox = ({ title, value }: BudgetBoxProps) => {
       }`}
     >
       <p className='budget-box__text'>{title}</p>
-      <p className='budget-box__number'>{value}</p>
+      <p className='budget-box__number'>
+        {title.toLowerCase() === 'income' ? '+' : '-'} {value}
+      </p>
     </div>
   );
 };

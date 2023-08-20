@@ -9,7 +9,12 @@
 
 .budget-input {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
+
+  @media screen and (min-width: 460px) {
+    flex-wrap: nowrap;
+  }
 
   & > * {
     border-radius: 5px;
@@ -17,23 +22,35 @@
     font-size: 1rem;
   }
   &__select {
-    height: 54px;
-    width: 10%;
+    flex-grow: 1;
+    color: black;
+    @media screen and (min-width: 460px) {
+      min-width: 10%;
+    }
   }
   &__text {
-    width: 50%;
+    order: -1;
+    width: 100%;
+    @media screen and (min-width: 460px) {
+      order: unset;
+    }
   }
   &__number {
-    width: 20%;
+    flex-grow: 1;
+    @media screen and (min-width: 460px) {
+      width: 30%;
+    }
   }
   &__text,
   &__number {
     padding: 1rem;
   }
   &__button {
-    height: 54px;
+    flex-grow: 1;
     cursor: pointer;
     text-transform: uppercase;
-    width: 10%;
+    @media screen and (min-width: 460px) {
+      min-width: 10%;
+    }
   }
 }
