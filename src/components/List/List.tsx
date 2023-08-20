@@ -1,8 +1,8 @@
-import { ListArrayProps, ListProps } from '../../types';
+import { IListArrayProps, IListProps } from '../../types';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import './List.scss';
 
-const List = ({ title, list, handleRemove }: ListProps) => {
+const List = ({ title, list, handleRemove }: IListProps) => {
   return (
     <div className='list'>
       <h2
@@ -12,7 +12,7 @@ const List = ({ title, list, handleRemove }: ListProps) => {
       >
         {title}
       </h2>
-      {list?.map((item: ListArrayProps) => (
+      {list?.map((item: IListArrayProps) => (
         <div className='list__item' key={item.id}>
           <p className='list__item__text'>{item.description}</p>
           <p

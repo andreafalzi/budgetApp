@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import BudgetBox from './components/BudgetBox/BudgetBox';
 import List from './components/List/List';
-import { ListArrayProps } from './types';
+import { IListArrayProps } from './types';
 import { blockInvalidChar } from './utils';
 import { BsCheck2Circle } from 'react-icons/bs';
 import './App.scss';
@@ -43,7 +43,7 @@ function App() {
     description: '',
     money: 0,
   };
-  const newListItem = (listItem: ListArrayProps, id: number) => {
+  const newListItem = (listItem: IListArrayProps, id: number) => {
     listItem.id = id;
     listItem.sign = sign;
     listItem.description = description;
@@ -69,17 +69,17 @@ function App() {
   };
 
   function handleRemoveIncome(id: number) {
-    const newList = incomeArrayList?.filter((item: ListArrayProps) => item.id !== id);
+    const newList = incomeArrayList?.filter((item: IListArrayProps) => item.id !== id);
 
     setIncomeArrayList(newList);
   }
   function handleRemoveExpenses(id: number) {
-    const newList = expansesArrayList?.filter((item: ListArrayProps) => item.id !== id);
+    const newList = expansesArrayList?.filter((item: IListArrayProps) => item.id !== id);
 
     setExpansesArrayList(newList);
   }
 
-  function calc(array: ListArrayProps[]) {
+  function calc(array: IListArrayProps[]) {
     return array.reduce((total, array) => total + array.money, 0);
   }
 

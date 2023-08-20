@@ -1,14 +1,14 @@
-export interface BudgetBoxProps {
+export interface IBudgetBoxProps {
   title: string;
   value: number;
 }
-export interface ListProps {
+export interface IListProps {
   title: string;
-  list?: ListArrayProps[];
+  list?: IListArrayProps[];
   handleRemove: (id: number) => void;
 }
 
-export interface ListArrayProps {
+export interface IListArrayProps {
   id: number;
   description: string;
   sign: string;
