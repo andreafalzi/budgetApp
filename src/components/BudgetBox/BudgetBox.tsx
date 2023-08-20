@@ -1,7 +1,7 @@
-import { BudgetBoxProps } from '../../types';
+import { IBudgetBoxProps } from '../../types';
 import './BudgetBox.scss';
 
-const BudgetBox = ({ title, value }: BudgetBoxProps) => {
+const BudgetBox = ({ title, value }: IBudgetBoxProps) => {
   return (
     <div
       className={`budget-box ${

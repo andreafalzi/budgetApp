@@ -1,14 +1,13 @@
+/* eslint-disable */
 // To connect with your mongoDB database
 const mongoose = require('mongoose');
-mongoose.connect(
-  'mongodb://localhost:27017/',
-  {
-    dbName: 'budgetAppDB',
+mongoose
+  .connect('mongodb://andrea:Falzer88@127.0.0.1:27017/budgetAppDB', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  },
-  (err) => (err ? console.log(err) : console.log('Connected to budgetAppDB database'))
-);
+  })
+  .then(() => console.log('Connected Successfully'))
+  .catch((err) => console.log(err));
 
 // Schema for users of app
 const ItemSchema = new mongoose.Schema({
@@ -34,7 +33,9 @@ const ItemSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
-const Item = mongoose.model('item', ItemSchema);
+
+const Item = mongoose.model('Item', ItemSchema);
+console.log(Item);
 Item.createIndexes();
 
 // For backend and express
@@ -61,8 +62,6 @@ app.post('/entry', async (req, resp) => {
     if (result) {
       resp.send(req.body);
       console.log(result);
-    } else {
-      console.log('User already register');
     }
   } catch (e) {
     resp.send('Something Went Wrong');
