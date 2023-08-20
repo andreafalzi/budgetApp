@@ -48,9 +48,10 @@ function App() {
     listItem.money = parseInt(money);
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     if (description === '') return alert('Description cannot be empty');
+    if (money === '') return alert('Value cannot be empty');
     if (sign === '+') {
       const newId = incomeArrayList.slice(-1)[0].id + 1;
       newListItem(listItem, newId);
