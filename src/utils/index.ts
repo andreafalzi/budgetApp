@@ -1,13 +1,4 @@
-import { ListArrayProps } from '../types';
+import { KeyboardEvent } from 'react';
 
-export function deleteItem(list: ListArrayProps[], id: string) {
-  const objWithIdIndex = list.findIndex((obj) => obj.id === parseInt(id));
-
-  if (objWithIdIndex > -1) {
-    list.splice(objWithIdIndex, 1);
-  }
-
-  console.log(list, id);
-
-  return list;
-}
+export const blockInvalidChar = (e: KeyboardEvent) =>
+  ['e', 'E', '+', '-'].includes(e.key) && e.preventDefault();

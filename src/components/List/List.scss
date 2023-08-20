@@ -15,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 2px grey solid;
+    // border-bottom: 1px grey solid;
     padding-inline: 1rem;
     position: relative;
 
@@ -58,4 +58,8 @@
     visibility: visible;
     transition: visibility ease-in-out 400ms 100ms;
   }
+}
+
+.list__item:nth-child(odd) {
+  background-color: rgb(43, 43, 43);
 }
