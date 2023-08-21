@@ -2,28 +2,11 @@ import { useState } from 'react';
 import BudgetBox from './components/BudgetBox/BudgetBox';
 import List from './components/List/List';
 import { IListArrayProps } from './types';
-import { blockInvalidChar } from './utils';
+import { blockInvalidChar, calc, calcTotal, currentMonth, months, year } from './utils';
 import { BsCheck2Circle } from 'react-icons/bs';
 import './App.scss';
 
 function App() {
-  const now = new Date();
-  const currentMonth = now.getMonth();
-  const year = now.getFullYear();
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
   const incomeArray = [
     { id: 0, sign: '+', description: 'bank account', money: 7000 },
     { id: 1, sign: '+', description: 'bank account', money: 7000 },
@@ -79,18 +62,11 @@ function App() {
     setExpansesArrayList(newList);
   }
 
-  function calc(array: IListArrayProps[]) {
-    return array.reduce((total, array) => total + array.money, 0);
-  }
-
   const incomeTotal = calc(incomeArrayList);
   const expensesTotal = calc(expansesArrayList);
 
-  function calcTotal(income: number, expenses: number) {
-    return income - expenses;
-  }
-
   const totalBudget = calcTotal(incomeTotal, expensesTotal);
+
   return (
     <>
       <div className='top'>
