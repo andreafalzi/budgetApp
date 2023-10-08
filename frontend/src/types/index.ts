@@ -4,19 +4,26 @@ export interface IBudgetBoxProps {
 }
 export interface IListProps {
   title: string;
-  list?: ListObjectProps[];
-  handleRemove?: (id: number) => void;
+  isLoading: boolean;
+  expenses?: Array<IListObjectProps>;
+}
+
+export interface IItemProps {
+  item: IListObjectProps;
 }
 
 export interface IListObjectProps {
-  _id?: number;
+  _id?: string;
   description: string;
   sign: string;
   money: string;
 }
 
-export type ListObjectProps = Description | Sign | Money;
+export type ListObjectProps = MongoId | Description | Sign | Money;
 
+export type MongoId = {
+  _id: string;
+};
 export type Description = {
   description: string;
 };

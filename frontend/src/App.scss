@@ -46,6 +46,9 @@
     padding: 1rem;
   }
   &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-grow: 1;
     cursor: pointer;
     text-transform: uppercase;
