@@ -45,14 +45,14 @@ const Item = ({ item }: IItemProps) => {
         {item.sign} {item.money}
       </p>
       <div className='item__icon-box'>
-        <AiOutlineEdit
+        {/* <AiOutlineEdit
           id={item._id}
           // onClick={() => updateExpense(item._id)}
           size={24}
           className={`item__icon ${
             item.sign === '+' ? 'item__icon--income' : 'item__icon--expenses'
           }`}
-        />
+        /> */}
         <AiOutlineCloseCircle
           id={item._id}
           onClick={() => deleteExpense(item)}

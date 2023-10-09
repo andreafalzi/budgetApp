@@ -59,11 +59,11 @@ function App() {
     event.preventDefault();
 
     // When a post request is sent to the create url, we'll add a new record to the database.
-    const newPerson = { ...form };
+    const newExpense = { ...form };
     if (form.description === '') return alert('Description cannot be empty');
     if (form.money === '') return alert('Value cannot be empty');
 
-    createExpense(newPerson);
+    createExpense(newExpense);
 
     setForm({ sign: '+', description: '', money: '' });
   };
