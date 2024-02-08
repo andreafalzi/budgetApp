@@ -1,35 +1,28 @@
-export interface IBudgetBoxProps {
+export type BudgetBoxTypeProps = {
   title: string;
   value: number;
-}
-export interface IListProps {
+};
+export type ListTypeProps = {
   title: string;
   isLoading: boolean;
-  expenses?: Array<IListObjectProps>;
-}
-
-export interface IItemProps {
-  item: IListObjectProps;
-}
-
-export interface IListObjectProps {
-  _id?: string;
-  description: string;
-  sign: string;
-  money: string;
-}
-
-export type ListObjectProps = MongoId | Description | Sign | Money;
-
-export type MongoId = {
-  _id: string;
+  expenses?: ListObjectTypeProps[];
 };
-export type Description = {
-  description: string;
+
+export type ItemTypeProps = {
+  item: ListObjectTypeProps;
 };
-export type Sign = {
-  sign: string;
+
+export type ListObjectTypeProps = {
+  _id?: MongoId;
+  description?: Description;
+  sign?: Sign;
+  money?: Money;
 };
-export type Money = {
-  money: string;
-};
+
+export type MongoId = string | undefined;
+
+export type Description = string;
+
+export type Sign = string;
+
+export type Money = string;

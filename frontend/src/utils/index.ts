@@ -1,9 +1,9 @@
-import { KeyboardEvent } from 'react';
-import { IListObjectProps } from '../types';
+import { KeyboardEvent } from "react";
 
 export const blockInvalidChar = (e: KeyboardEvent) =>
-  ['e', 'E', '+', '-'].includes(e.key) && e.preventDefault();
+  ["e", "E", "+", "-"].includes(e.key) && e.preventDefault();
 
-export default function calc(array: Array<IListObjectProps>) {
-  return array?.reduce((total, array) => total + parseInt(array.money), 0);
-}
+export const calc = (array: { money: string }[]) => {
+  const total = array?.reduce((total, array) => total + parseInt(array.money), 0);
+  return total;
+};

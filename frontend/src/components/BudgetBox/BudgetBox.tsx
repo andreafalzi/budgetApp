@@ -1,16 +1,16 @@
-import { IBudgetBoxProps } from '../../types';
-import './BudgetBox.scss';
+import { BudgetBoxTypeProps } from "../../types";
+import "./BudgetBox.scss";
 
-const BudgetBox = ({ title, value }: IBudgetBoxProps) => {
+const BudgetBox = ({ title, value }: BudgetBoxTypeProps) => {
   return (
     <div
       className={`budget-box ${
-        title.toLowerCase() === 'income' ? 'budget-box--income' : 'budget-box--expense'
+        title.toLowerCase() === "income" ? "budget-box--income" : "budget-box--expense"
       }`}
     >
-      <p className='budget-box__text'>{title}</p>
-      <p className='budget-box__number'>
-        {title.toLowerCase() === 'income' ? '+' : '-'} {value}
+      <p className="budget-box__text">{title}</p>
+      <p className="budget-box__number">
+        {title.toLowerCase() === "income" ? "+" : "-"} {value}
       </p>
     </div>
   );
