@@ -10,6 +10,7 @@
   &__number {
     display: flex;
     align-items: center;
+    // direction: rtl;
     gap: 5px;
     transform: translateX(0px);
     transition: transform ease-in-out 300ms;
@@ -48,7 +49,7 @@
 
 .item:hover {
   .item__number {
-    transform: translateX(-45px);
+    transform: translateX(-15px);
   }
   .item__icon-box {
     visibility: visible;

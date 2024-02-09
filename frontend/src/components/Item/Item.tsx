@@ -2,11 +2,13 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { ItemTypeProps, MongoId } from "../../types";
 import { useMutation, useQueryClient } from "react-query";
 // import updateExpenseRequest from '../../api/updateExpenseRequest';
-
-import "./Item.scss";
 import deleteExpenseRequest from "../../api/deleteExpenseRequest";
 
-const Item = ({ item }: ItemTypeProps) => {
+import "./Item.scss";
+
+const Item = ({
+  item,
+}: ItemTypeProps<{ _id: string; description: string; sign: string; money: string }>) => {
   const queryClient = useQueryClient();
 
   // const { mutate: updateExpense } = useMutation(

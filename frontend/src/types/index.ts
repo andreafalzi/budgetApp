@@ -8,21 +8,15 @@ export type ListTypeProps = {
   expenses?: ListObjectTypeProps[];
 };
 
-export type ItemTypeProps = {
-  item: ListObjectTypeProps;
+export type ItemTypeProps<T> = {
+  item: T;
 };
 
 export type ListObjectTypeProps = {
-  _id?: MongoId;
-  description?: Description;
-  sign?: Sign;
-  money?: Money;
+  _id: MongoId;
+  description: string;
+  sign: string;
+  money: string;
 };
 
-export type MongoId = string | undefined;
-
-export type Description = string;
-
-export type Sign = string;
-
-export type Money = string;
+export type MongoId = string;
